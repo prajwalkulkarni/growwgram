@@ -1,0 +1,114 @@
+.post-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50vw;
+    height: auto;
+    /* padding: 0.5rem; */
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.1);
+    cursor: pointer;
+    margin:10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-item__image{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    height: auto;
+    object-fit: fill;
+    /* border-radius: 1.0rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.post-item__content{
+    display: flex;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* max-height: 50%; */
+    padding: 0.2rem;
+    border-radius: 1.0rem;
+    border: 5px solid green;
+    transform: scale(1.1);
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.post-item__imageDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0.1rem;
+    border-radius: 1.0rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-item__imageDetails__numbers{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-item__profileInfo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 0.1rem;
+    border-radius: 1.0rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-item:hover .post-item__content{
+    transform: translateY(0%);
+}
+
+@media screen and (max-width: 768px){
+    .post-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 80vw;
+        height: auto;
+        /* padding: 0.5rem; */
+        border-radius: 0.5rem;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.1);
+        cursor: pointer;
+        margin:10px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+}
+    
