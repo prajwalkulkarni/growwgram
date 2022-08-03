@@ -1,0 +1,26 @@
+{
+  "name": "growwgram",
+  "version": "1.0.0",
+  "description": "Photo library curated using unsplash open API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajwalkulkarni/growwgram.git"
+  },
+  "keywords": [
+    "Groww"
+  ],
+  "author": "Prajwal Kulkarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prajwalkulkarni/growwgram/issues"
+  },
+  "homepage": "https://github.com/prajwalkulkarni/growwgram#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
