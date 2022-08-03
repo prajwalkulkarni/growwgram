@@ -1,0 +1,30 @@
+.header-bar{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    margin: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.5);
+    z-index: 10;
+}
+
+.menu-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-items > *{
+    padding: 0.3rem;
+}
+
+@media screen and (max-width: 768px){
+    .menu-items > img{
+        display: none;
+    }
+}
+    
