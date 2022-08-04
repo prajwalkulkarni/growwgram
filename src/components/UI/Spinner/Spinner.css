@@ -1,0 +1,22 @@
+.spinner{
+
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border: 5px solid rgb(124, 124, 124);
+    position: relative;
+    border-radius: 50%;
+    border-top-color: rgb(56, 248, 143);
+    animation: spinner 1s linear infinite;
+}
+
+
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
