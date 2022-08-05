@@ -1,0 +1,21 @@
+.profile-posts{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /* grid-template-rows: minmax(200px, 250px); */
+    grid-gap: 0.5rem;
+    width: 75vw;
+
+}
+
+.profile-post-item{
+    padding:0.1rem;
+    /* border:2px solid black; */
+}
+
+
+.profile-post-item img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 15px;
+}
