@@ -2,7 +2,14 @@ import React from "react";
 import './PostItem.css'
 import { PostItemType } from "../../types/types";
 import { Link } from "react-router-dom";
+import { AiFillClockCircle, AiFillHeart } from "react-icons/ai";
+import { useStore } from "../../store/store";
+
 const PostItem = React.forwardRef<HTMLDivElement,PostItemType>((props,ref) => {
+
+    
+
+    const date = new Date(props.created_at).toString().split(" ").slice(0,4).join(" ")
     return (
 
         <div className="post-item" ref={ref}>
@@ -14,17 +21,19 @@ const PostItem = React.forwardRef<HTMLDivElement,PostItemType>((props,ref) => {
 
                 <div className="post-item__imageDetails">
                     <div className="post-item__imageDetails__numbers">
-                        <p>Created At {props.created_at}</p>&nbsp;&nbsp;&nbsp;
-                        <p>Likes {props.likes}</p>
+                        <h4><AiFillClockCircle/> {`${date}`}</h4>&nbsp;&nbsp;&nbsp;
+                        <h4><AiFillHeart/> {props.likes}</h4>
                     </div>
-                    <article>Description</article>
+                    
+                    {props.description && <article>{props.description}</article>}
                 </div>
+                <hr/>
                 <div className="post-item__profileInfo">
                     <Link to={`/user/${props.user.username}`}>
                         <img src={props.user.profile_image?.medium} height="50" width={50} />
                     </Link>
                     <Link to={`/user/${props.user.username}`}>
-                        <p><b>{props.user.name}</b></p>
+                        <h4>{props.user.name}</h4>
                     </Link>
                 </div>
 
