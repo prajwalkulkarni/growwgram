@@ -1,0 +1,13 @@
+.posts-container{
+    width: 75vw;
+    /* padding: 1rem; */
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card-style{
+    width: 100%;
+}
