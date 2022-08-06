@@ -6,7 +6,7 @@
     border: 5px solid rgb(124, 124, 124);
     position: relative;
     border-radius: 50%;
-    border-top-color: rgb(56, 248, 143);
+    border-top-color: var(--primary-color);
     animation: spinner 1s linear infinite;
 }
 
