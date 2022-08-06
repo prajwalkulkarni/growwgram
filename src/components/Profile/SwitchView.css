@@ -1,0 +1,41 @@
+.switchview-container{
+    display: flex;
+    justify-self: center;
+    background-color: var(--background-light);
+    box-shadow: var(--boxShadow);
+    width: fit-content;
+    
+}
+
+.cardstyle{
+    margin:0.5rem;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 0.5rem;
+}
+
+.gridview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    padding: 0.5rem;
+}
+
+.gridview:active, .gridview:focus{
+    background-color: var(--hover-color);
+}
+
+.listview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    padding: 0.5rem;
+}
+
+.listview:active{
+    background-color: var(--hover-color);
+}
