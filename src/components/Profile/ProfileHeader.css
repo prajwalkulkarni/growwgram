@@ -1,17 +1,24 @@
+.card-style{
+    width: 100%;
+}
+
 .profile-header{
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     justify-content: center;
     align-items: center;
     /* width: 75vw; */
     width: 100%;
+    flex-grow: 1;
+    flex-basis: 1;
     padding: 0.5rem;
-    margin: 1rem;
 }
 
 .profile-header__overview{
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     justify-content: center;
     align-items: center;
     /* flex-grow: 1; */
@@ -21,12 +28,21 @@
 .profile-header__overview__info{
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border:1px solid red;
+    color: var(--font-color-light);
+    /* border:1px solid red; */
     /* width: 100%; */
     /* padding: 0.1rem; */
     transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.profile-header__overview__info.dark{
+    color: var(--font-color-dark);
 }
 
 .profile-header__overview__info > h2,h4 {
@@ -36,16 +52,21 @@
 .profile-header__overview__image img{
     border-radius: 50%;
     padding: 0.1rem;
-    border:5px solid rgb(92, 255, 179);
+    border:5px solid var(--primary-color);
 
 }
 
 .profile-header__likes{
     display: flex;
     justify-content: space-around;
-    padding: 0.2rem;
+    color: var(--font-color-light);
+    padding: 0.3rem;
     flex-wrap: wrap;
     width: 100%;
+}
+
+.profile-header__likes.dark{
+    color: var(--font-color-dark);
 }
 
 
@@ -53,6 +74,7 @@
     .profile-header{
         display: flex;
         flex-direction: column;
+        -ms-flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 70vw;
