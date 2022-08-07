@@ -10,11 +10,13 @@ import {
 } from "react-router-dom";
 import NewsFeed from "./pages/NewsFeed";
 import ProfileSection from "./pages/ProfileSection";
-export default function App(){
+import { useStore } from "./store/store";
 
+export default function App(){
+    const theme = useStore(state => state.theme)
     return (
         <div className="container">
-            
+            <style>{`body{ background-color: ${theme===''?'lightgray': '#4b4b4b'};}`}</style>
             <BrowserRouter>
             <Header/>
                 <Routes>

@@ -80,6 +80,9 @@ export default function useFetch(endpoint: string, postCount: number) {
                             console.log(postdata)
                             localStorage.setItem(endpoint, JSON.stringify([postdata]))
 
+                            setTimeout(() => {
+                                localStorage.removeItem(endpoint)
+                            }, 6000000)
                             setData(postdata)
                         }
 
@@ -89,10 +92,10 @@ export default function useFetch(endpoint: string, postCount: number) {
                     else {
                         const postdata = await getData();
                         localStorage.setItem(endpoint, JSON.stringify(postdata))
-                        // setTimeout(() => {
-                        //     // delete cache[endpoint as keyof typeof cache];
-                        //     localStorage.removeItem(endpoint)
-                        // }, 6000000)
+                        setTimeout(() => {
+                            // delete cache[endpoint as keyof typeof cache];
+                            localStorage.removeItem(endpoint)
+                        }, 6000000)
 
 
                         setData(postdata);
