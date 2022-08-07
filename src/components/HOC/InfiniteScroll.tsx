@@ -1,30 +1,37 @@
-import React, { Fragment, useCallback } from "react"
+import React, { Fragment, useCallback, useMemo } from "react"
 import useFetch from "../../hooks/useFetch";
 import { useStore } from "../../store/store";
-
-
+import { PostItemType } from "../../types/types";
 const options = {
     root: document.querySelector('container'),
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 0.8
 }
+
+
 export default function infiniteScroll(Component: React.FC<{ loading: boolean, data: any, targetElement: any, error: null|string }>, endpoint: string) {
 
-    return function WrappedComponent() {
+   
+    return function WrappedComponent(props:{username?:string}) {
         const observer = React.useRef<IntersectionObserver | null>(null);
         const [postCount, setPostCount] = React.useState<number>(0);
 
         // const { username, pageCount, incrementPageCount } = useStore(state => state)
 
-        const username = useStore(state => state.username)
+        // const username = useStore(state => state.username)
         const pageCount = useStore(state => state.pageCount)
         const incrementPageCount = useStore(state => state.incrementPageCount)
-
+        const newsFeedPosts = useStore(state => state.newsFeedPosts)
+        const setIsLoading = useStore(state => state.setIsLoading)
+        const hasMore = useStore(state => state.hasMore)
+       
         if (endpoint.includes('users')) {
-            endpoint = `/users/${username}/photos?page=${pageCount}`
+            endpoint = `/users/${props.username}/photos?page=${pageCount}`
         }
         
-        const { loading, data, error } = useFetch(endpoint, postCount);
+        
+        const {loading, data, error}  = useFetch(endpoint, postCount);
+        const memoizedData = useMemo(() => data, [data])
         const targetElement = useCallback((node: HTMLDivElement) => {
 
 
@@ -36,13 +43,22 @@ export default function infiniteScroll(Component: React.FC<{ loading: boolean, d
 
             observer.current = new IntersectionObserver(entries => {
                 if (entries[0].isIntersecting) {
-
+                    console.log("Is Intersecting")
+                    
+                  if(!(!!error)){
                     if(endpoint.includes('users')){
-                        incrementPageCount()
+                        if(hasMore){
+                            incrementPageCount()
+                        }
+                        
                     }
                     else{
-                        setPostCount(prev => prev + 1)
+                        if(newsFeedPosts.length<10){
+                            setIsLoading(true)
+                            setPostCount(prev => prev + 1)
+                        }
                     }
+                  }
                     
                 }
             }, options)
@@ -53,7 +69,7 @@ export default function infiniteScroll(Component: React.FC<{ loading: boolean, d
 
         return (
             <React.Fragment>
-                <Component targetElement={targetElement} loading={loading} data={data} error={error} />
+                <Component targetElement={targetElement} loading={loading} data={memoizedData} error={error} />
             </React.Fragment>
         )
     }
