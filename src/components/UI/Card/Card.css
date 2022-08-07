@@ -6,3 +6,7 @@
     /* padding: 20px; */
     
 }
+
+.card.dark{
+    background-color: var(--background-dark)
+}
