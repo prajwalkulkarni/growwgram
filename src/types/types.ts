@@ -53,3 +53,24 @@ export type ProfileType = {
         twitter_username: string|null,
     },
 }
+
+export type PostState = {
+    theme: string;
+    posts: PostItemType[];
+    newsFeedPosts: PostItemType[];
+    username: string;
+    pageCount: number;
+    isLoading: boolean;
+    hasMore: boolean;
+    resetPageCount: () => void;
+    incrementPageCount: () => void;
+    addPosts: (posts: PostItemType[]) => void;
+    setNewsFeedPosts: (newPost: PostItemType) => void;
+    setNewsFeedPostsOnReload: (newPost: PostItemType[]) => void;
+    setUsername: (username: string) => void;
+    setIsLoading: (isLoading: boolean) => void;
+    setHasMore: (hasMore: boolean) => void;
+    setTheme: (theme:string) => void;
+    resetUsername: () => void;
+    resetPosts: () => void;
+}
