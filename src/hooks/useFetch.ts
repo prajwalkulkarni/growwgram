@@ -22,7 +22,7 @@ export default function useFetch(endpoint: string, postCount: number) {
         const res = await fetch(`https://api.unsplash.com${endpoint}`, {
             method: 'GET',
             headers: {
-                Authorization: 'Client-ID ' + 'lfMvwQQUVDLcNQ_UwXC3AmDtPMe2IP1ZbaUU29gVJto'
+                Authorization: 'Client-ID ' + process.env.REACT_APP_API_KEY
             }
 
         })
