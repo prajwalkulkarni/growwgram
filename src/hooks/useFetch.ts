@@ -117,7 +117,6 @@ export default function useFetch(endpoint: string, postCount: number) {
 
     }, [endpoint, postCount])
 
-
     return {
         loading,
         data,
