@@ -1,6 +1,8 @@
 .header-bar{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
     background-color: whitesmoke;
     margin: none;
     position: sticky;
@@ -10,21 +12,46 @@
     padding: 0.5rem;
     box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.5);
     z-index: 10;
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.header-bar.dark{
+    background-color: var(--background-dark);
+
 }
 
 .menu-items{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--font-color-light);
+    transition: all 0.3s ease-in-out;
 }
+
+.menu-items h2{
+    padding:1rem;
+}
+.menu-items.dark{
+    color: var(--font-color-dark);
+}
+
 
 .menu-items > *{
     padding: 0.3rem;
 }
 
+
+.moon-yellow{
+    color: #fccf68;
+}
 @media screen and (max-width: 768px){
     .menu-items > img{
         display: none;
     }
+
+    
 }
     
