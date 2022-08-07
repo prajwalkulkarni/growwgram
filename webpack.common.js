@@ -7,7 +7,6 @@ const path = require('path');
 
 
 module.exports = {
-    mode: prod ? 'production' : 'development',
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -41,10 +40,6 @@ module.exports = {
             }
            
         ]
-    },
-    devtool: prod ? undefined : 'source-map',
-    devServer: {
-        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
