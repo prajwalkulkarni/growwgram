@@ -7,6 +7,10 @@
     
 }
 
+.switchview-container.dark{
+    background-color: var(--background-dark);
+}
+
 .cardstyle{
     margin:0.5rem;
     display: flex;
@@ -14,6 +18,11 @@
     justify-content: center;
     width: fit-content;
     padding: 0.5rem;
+    background-color: var(--background-light);
+}
+
+.cardstyle.dark{
+    background-color: var(--background-dark);
 }
 
 .gridview{
@@ -22,11 +31,13 @@
     align-items: center;
     font-size: x-large;
     padding: 0.5rem;
+    color: var(--font-color-light);
 }
 
-.gridview:active, .gridview:focus{
-    background-color: var(--hover-color);
+.gridview.dark{
+    color: var(--font-color-dark);
 }
+
 
 .listview{
     display: flex;
@@ -34,8 +45,9 @@
     align-items: center;
     font-size: x-large;
     padding: 0.5rem;
+    color: var(--font-color-light)
 }
 
-.listview:active{
-    background-color: var(--hover-color);
+.listview.dark{
+    color: var(--font-color-dark);
 }
