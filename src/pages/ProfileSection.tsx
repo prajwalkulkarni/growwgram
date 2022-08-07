@@ -56,7 +56,7 @@ export default function ProfileSection(){
             username={username ?? 'elijahp'}/>
 
             <SwitchView setViewType={setViewType}/>
-                {viewType === 'grid' ? <Card className="card-style"><GridViewWithInfiniteScroll/></Card> : <ListViewWithInifniteScroll/>}
+                {viewType === 'grid' ? <GridViewWithInfiniteScroll username={username ??'elijahp'}/> : <ListViewWithInifniteScroll username={username ??'elijahp'}/>}
            
         </div>
     )
